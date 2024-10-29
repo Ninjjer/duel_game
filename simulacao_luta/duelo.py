@@ -1,6 +1,7 @@
 from simulacao import *
 import os
 import time
+import random
 
 call_enemy = enemy()
 call_attack = attack()
@@ -8,9 +9,12 @@ call_attack = attack()
 class duel:
     def __init__(self):
         self.t_enemy = []
+        #self.select_enemy = None
 
     def start(self):
         self.t_enemy = copy.deepcopy(call_enemy.list_enemies())
+        #self.choose_enemy = copy.deepcopy(call_enemy.list_enemies())
+        #self.t_enemy = random.randint(0, len(self.choose_enemy) - 1)
         os.system('cls')
         print("You see your enemy appearing in your front...\n")
         time.sleep(2)
@@ -65,5 +69,5 @@ class duel:
             else:
                 print("You insert a wrong value!\n\n")
 
-            action=int(input("Choice your next action\n\n1- Weak-attack\n2-Medium-attack\n3-Strong-attack\n4-Do nothing\n5-Give up\n"))
+            action=int(input("Choice your next action\n\n1-Weak-attack\n2-Medium-attack\n3-Strong-attack\n4-Do nothing\n5-Give up\n"))
 
